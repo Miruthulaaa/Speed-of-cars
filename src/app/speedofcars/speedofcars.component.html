@@ -7,7 +7,7 @@
             <!-- Speed and toggle -->
             <section class="speed">
                 <div class="speed-toggle-wrap">
-                    <img alt="car" src="/assets/car-front.svg" [ngClass]="{ yellow: selectedCar == 'yellow' }" />
+                    <img alt="car" src="assets/car-front.svg" [ngClass]="{ yellow: selectedCar == 'yellow' }" />
                     <!-- Toggle switch -->
                     <toggle-input [leftText]="'1'" [rightText]="'2'" (onSelect)="getSelectedCar($event)"></toggle-input>
                     <div class="circle-wrap" *ngIf="speed$ | async as speed">
