@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  prefix: "",
+  mode: "jit",
+  important: true,
+  content: [
+    "./src/**/*.{html,ts,css,scss,sass,less,styl}",
+  ],
   theme: {
     extend: {},
+    fontFamily: {
+      'roboto': ['Roboto', 'sans-serif']
+    },
     fontSize: {
       "12px": "12px",
       "18px": "18px",
