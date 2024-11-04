@@ -1,0 +1,7 @@
+<div class="toggle-container">
+    <span *ngIf="leftText" class="toggle-text left" [class.option-active]="!isRightActive" [innerHTML]="leftText"></span>
+    <div class="toggle-switch" [class.is-right]="isRightActive" (click)="toggle()">
+        <div class="switch" [class.right-active]="isRightActive"></div>
+    </div>
+    <span *ngIf="rightText" class="toggle-text right" [class.option-active]="isRightActive" [innerHTML]="rightText"></span>
+</div>
