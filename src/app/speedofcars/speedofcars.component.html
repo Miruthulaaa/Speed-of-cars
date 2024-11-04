@@ -1,37 +1,35 @@
 <div class="speed-of-cars">
-    <div class="wrapper">
-        <section class="header">Blue Car's Performance</section>
+    <div class="wrapper" *ngIf="car$ | async as selectedCar">
+        <!-- Title -->
+        <section class="header">{{selectedCar}} Car's Performance</section>
+        <!-- Card -->
         <section class="speed-card">
+            <!-- Speed and toggle -->
             <section class="speed">
-                <!-- img, toggle -->
-                <div class="wrap">
-                    <div class="speed-toggle-wrap" *ngIf="car$ | async as selectedCar">
-                        <img alt="car" src="../../assets/car-front.svg"
-                            [ngClass]="{ yellow: selectedCar == 'yellow' }" />
-                        <toggle-input [leftText]="'1'" [rightText]="'2'"
-                            (onSelect)="getSelectedCar($event)"></toggle-input>
-                        <div class="circle-wrap" *ngIf="speed$ |async as speed">
-                            <div class="circle-red" [ngClass]="{ 'active-red': speed>100 }">
-                                <div class="speed-circle">
-                                    <div class="speed-value">
-                                        <div class="value">
-                                            {{speed}}
-                                        </div>
-                                        <div class="value-text">
-                                            km/h
-                                        </div>
+                <div class="speed-toggle-wrap">
+                    <img alt="car" src="../../assets/car-front.svg" [ngClass]="{ yellow: selectedCar == 'yellow' }" />
+                    <!-- Toggle switch -->
+                    <toggle-input [leftText]="'1'" [rightText]="'2'" (onSelect)="getSelectedCar($event)"></toggle-input>
+                    <div class="circle-wrap" *ngIf="speed$ | async as speed">
+                        <div class="circle-red" [ngClass]="{ 'speed-warning': speed > 100 }">
+                            <div class="speed-circle">
+                                <div class="speed-value">
+                                    <div class="value">
+                                        {{speed}}
+                                    </div>
+                                    <div class="value-text">
+                                        km/h
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-speed">Current Speed</div>
                         </div>
+                        <div class="text-speed">Current Speed</div>
                     </div>
                 </div>
-                <!-- speed -->
-                <div></div>
             </section>
+            <!-- Footer -->
             <section class="footer-color">
-                <div class="color-container" [ngClass]="{ 'yellow-container': isYellowCarSelected }"></div>
+                <div class="color-container" [ngClass]="{ 'yellow-container': selectedCar == 'yellow' }"></div>
             </section>
         </section>
     </div>

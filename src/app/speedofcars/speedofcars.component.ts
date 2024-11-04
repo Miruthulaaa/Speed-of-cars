@@ -12,9 +12,8 @@ import { speedFeature } from '../store/speed.selector';
   styleUrls: ['./speedofcars.component.scss'],
 })
 export class SpeedofcarsComponent {
-  isYellowCarSelected: boolean = false;
   car$: Observable<Car> = new Observable();
-  speed$ : Observable<number> = new Observable();
+  speed$: Observable<number> = new Observable();
   constructor(private store: Store) {}
   ngOnInit(): void {
     this.initialsizeStore();
@@ -33,14 +32,18 @@ export class SpeedofcarsComponent {
    * @param isYellowSelected boolean
    */
   getSelectedCar(isYellowSelected: boolean): void {
-    this.isYellowCarSelected = isYellowSelected;
     this.store.dispatch(
-      speedActions.setSpeed({ carDetails: { speed: this.generateSpeedValue(), car: isYellowSelected ? Car.YELLOW : Car.BLUE } })
+      speedActions.setSpeed({
+        carDetails: {
+          speed: this.generateSpeedValue(),
+          car: isYellowSelected ? Car.YELLOW : Car.BLUE,
+        },
+      })
     );
   }
 
   /**
-   * 
+   *
    * generate random number for speed upto 200
    * @returns speed number
    */
