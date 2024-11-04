@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { speedActions } from 'src/app/store/speed.actions';
+import { speedFeature } from 'src/app/store/speed.selector';
 import { Car } from 'src/app/store/speed.state';
-import { speedFeature } from '../store/speed.selector';
 
 @Component({
   selector: 'speedofcars',
