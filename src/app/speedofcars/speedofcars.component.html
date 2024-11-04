@@ -1,0 +1,22 @@
+<div class="speed-of-cars">
+  <div class="wrapper">
+    <section class="header">Blue Car's Performance</section>
+    <section class="speed-card">
+      <section class="speed">
+        <!-- img, toggle -->
+        <div class="speed-toggle-wrap">  
+            <img alt="car" src="../../assets/car-front.svg" [ngClass]="{'yellow': isYellowCarSelected}"/>
+            <toggle-input [leftText]="'1'" [rightText]="'2'" (onSelect)="getSelectedCar($event)"></toggle-input>
+            <div class="speed-circle">
+                
+            </div>
+        </div>
+        <!-- speed -->
+        <div></div>
+      </section>
+      <section class="footer-color">
+        <div class="color-container"></div>
+      </section>
+    </section>
+  </div>
+</div>
