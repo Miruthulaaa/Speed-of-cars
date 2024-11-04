@@ -3,30 +3,57 @@
     .wrapper {
         @apply flex justify-center flex-col items-center h-full;
         .header {
-            @apply uppercase text-20px;
+            @apply uppercase text-20px font-light;
         }
         .speed-card {
-            @apply rounded-2xl w-1/2 grow flex justify-center items-center flex-col relative shadow-[0px_3px_13px_#00000029] mt-4 pt-10;
+            @apply rounded-2xl w-[80%] grow flex justify-center items-center flex-col relative shadow-[0px_3px_13px_#00000029] mt-4 pt-10;
             .speed {
                 @apply grow w-full;
-            .speed-toggle-wrap {
-                @apply flex flex-col justify-center items-center h-full;
-                img {
-                    @apply w-11 mb-2;
-                    filter: invert(33%) sepia(100%) saturate(1000%) hue-rotate(200deg);
-                }
-                img.yellow {
-                    filter: invert(80%) sepia(42%) saturate(5932%) hue-rotate(10deg) brightness(108%) contrast(94%);
-                }
-                .speed-circle {
-                    @apply rounded-full w-[200px] mt-4 h-[200px] shadow-[0px_3px_13px_#00000029];
+                .wrap {
+                    @apply h-full;
+                    .speed-toggle-wrap {
+                        @apply flex flex-col items-center h-full;
+                        img {
+                            @apply w-11 mb-2;
+                            filter: invert(45%) sepia(90%) saturate(503%) hue-rotate(154deg) brightness(101%) contrast(100%);
+                        }
+                        img.yellow {
+                            filter: invert(80%) sepia(42%) saturate(5932%) hue-rotate(10deg) brightness(108%)
+                                contrast(94%);
+                        }
+                        .circle-wrap {
+                            @apply grow flex items-center flex-col;
+                            .text-speed {
+                                @apply font-light mt-[10px];
+                            }
+                            .circle-red {
+                                @apply flex justify-center items-center mt-4 rounded-full w-[155px] h-[160px];
+                                .speed-circle {
+                                    @apply bg-white text-center rounded-full w-[122px] h-[125px] shadow-[0px_3px_13px_#00000029] flex justify-center items-center;
+                                    .speed-value {
+                                        .value {
+                                            @apply font-bold text-[40px];
+                                        }
+                                        .value-text {
+                                            @apply font-light;
+                                        }
+                                    }
+                                }
+                            }
+                            .active-red {
+                                @apply bg-red-500;
+                            }
+                        }
+                    }
                 }
             }
-        }
             .footer-color {
                 @apply w-full h-20;
                 .color-container {
-                    @apply bg-blue-500 w-full h-full rounded-b-2xl;
+                    @apply bg-sky-500 w-full h-full rounded-b-2xl;
+                }
+                .yellow-container {
+                    @apply bg-yellow-500;
                 }
             }
         }
