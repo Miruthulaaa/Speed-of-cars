@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { speedActions } from 'src/app/store/speed.actions';
+import { initialState } from 'src/app/store/speed.reducer';
 import { speedFeature } from 'src/app/store/speed.selector';
 import { Car } from 'src/app/store/speed.state';
 
@@ -22,7 +23,7 @@ export class SpeedofcarsComponent {
     this.car$ = this.store.select(speedFeature.selectCar);
     this.speed$ = this.store.select(speedFeature.selectSpeed);
     this.store.dispatch(
-      speedActions.setSpeed({ carDetails: { speed: 60, car: Car.BLUE } })
+      speedActions.setSpeed({ carDetails: initialState })
     );
   }
 
