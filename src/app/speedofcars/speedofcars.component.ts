@@ -1,9 +1,8 @@
-import { Car } from 'src/app/store/speed.state';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { speedActions } from 'src/app/store/speed.actions';
-import { SpeedState } from 'src/app/store/speed.state';
+import { Car } from 'src/app/store/speed.state';
 import { speedFeature } from '../store/speed.selector';
 
 @Component({
