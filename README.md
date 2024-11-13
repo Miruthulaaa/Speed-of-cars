@@ -1,7 +1,20 @@
 # SpeedOfCars
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+
+## Demo
 Check demo in -> https://miruthulaaa.github.io/Speed-of-cars/
+
+## Problem statement
+Create a website which shows the current speed of two cars (based on the layout on the
+following pages).
+
+Requirements:
+1. If speed is > 100km/h please highlight it by making it red
+2. You should use Angular, React or Vue.js
+3. Keep it simple e.g. no server is needed
+4. Everything should run in memory (just simulate the data on the frontend)
+5. The final result should be executable as standalone program (no installation needed)
 
 ## Development server
 
